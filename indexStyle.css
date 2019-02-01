@@ -1,0 +1,24 @@
+/*
+  Colors: Swatch1.png
+    Grey: #565554
+    Blue: #2e86ab
+    Tan: #f6f5ae
+    Yellow: #f5f749
+    Red: #f24236
+*/
+
+.centerTEXT{
+  text-align: center;
+}
+.centerIMG{
+  float: none;
+  margin: 0 auto;
+}
+
+#Home_1{
+  background-color: #f6f5ae;
+}
+
+#nav{
+  background-color:#f24236;
+}
