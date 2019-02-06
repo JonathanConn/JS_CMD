@@ -14,9 +14,24 @@
   float: none;
   margin: 0 auto;
 }
+html,body{height:100%;}
+body{
+    background-image:url(stardust.png);
+}
+
+.container {
+    height:100%;
+}
+
+.fill{
+    width:100%;
+    height:100%;
+    min-height:100%;
+    padding:10px;
+    color:#efefef;
+}
 
 #Home_1{
-  background-color: #f6f5ae;
 }
 
 #nav{
