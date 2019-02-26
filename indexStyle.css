@@ -31,6 +31,18 @@ body{
     color:#efefef;
 }
 
+.showROW{
+  background-color: red;
+}
+.showCOL{
+  background-color: green;
+}
+
+.buttons{
+  background-color: black;
+  
+}
+
 #Home_1{
 }
 
@@ -48,4 +60,47 @@ body{
 
 #sub{
 
+}
+
+#formTERM{
+  height: 50%;
+  width: 100%;
+}
+
+#outTERM{
+  background-color: black;
+
+  /* pos */
+  border-color: black;
+  width: 50%;
+  height: 90%;
+
+  /*pushing the top box down into the input */
+  margin-bottom: -4px;
+
+  /*border setup */
+  border-color: Grey;
+  border-style:solid;
+  border-width: medium;
+
+}
+
+#inTERM{
+  background-color: black;
+  border-color: black;
+  color: green;
+  font-weight: bold;
+
+  /* pos */
+  width: 50%;
+  height: 10%;
+  text-align: left;
+
+  /*pushing the top box up into the input */
+  margin-top: -4px;
+
+  /*border setup */
+  border-color: grey;
+  border-style:solid;
+  border-width: medium;
 }
