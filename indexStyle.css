@@ -38,6 +38,11 @@ body{
   background-color: green;
 }
 
+.buttons{
+  background-color: black;
+  
+}
+
 #Home_1{
 }
 
@@ -86,7 +91,4 @@ body{
   border-color: grey;
   border-style:solid;
   border-width: medium;
-
-
-
 }
