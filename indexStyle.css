@@ -40,7 +40,7 @@ body{
 
 .buttons{
   background-color: black;
-  
+
 }
 
 #Home_1{
@@ -72,7 +72,7 @@ body{
 
   /* pos */
   border-color: black;
-  width: 50%;
+    width: 50%;
   height: 90%;
 
   /*pushing the top box down into the input */
