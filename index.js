@@ -1,6 +1,10 @@
 var text = ""
-var comList = ["cd", "dir"];
+
+//BST Class (struct.js)
 var dir = new BinarySearchTree();
+
+//Command class (com.js)
+var com = new Com();
 
 //for submit on enter
 document.getElementById("term").addEventListener("keypress", submitOnEnter);
@@ -19,29 +23,9 @@ function submitOnEnter(event){
     if(event.which === 13 && !event.shiftKey){
         event.target.form.dispatchEvent(new Event("submit", {cancelable: true}));
         event.preventDefault();
-        checkCom();
+        com.checkCom();
 
     }
-}
-
-//edit text area after submit
-function checkCom(){
-  var command = document.getElementById("term").value;
-  command = command.substring(3, command.indexOf(" "));
-
-  if(contains(comList, command)) runCom(command);
-  else printError(command);
-
-  newLine();
-
-}
-
-function runCom(command){
-    console.log("running " + command + " :) ");
-}
-
-function printError(command){
-  console.log("ERROR " + command + " NOT FOUND");
 }
 
 function updateCurPath(){
@@ -53,31 +37,3 @@ function updateCurPath(){
 function newLine(){
   updateCurPath();
 }
-
-
-function contains(array, command){
-  for(var i = 0; i < comList.length; i++)
-    if(comList[i] == command.toLowerCase())
-      return true;
-  return false;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
