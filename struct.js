@@ -111,5 +111,16 @@ class BinarySearchTree{
 
         else
             return node;
-      } 
+      }
+
+      inorderSTR(node){
+        var str = "";
+          if(node !== null){
+              this.inorder(node.left);
+              str += node.data;
+              this.inorder(node.right);
+          }
+        return str;
+      }
+
 }
