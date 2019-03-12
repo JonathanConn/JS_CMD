@@ -1,5 +1,7 @@
-var text = "";
+var text = ""
+var curPath = "";
 var comList = ["cd", "dir"];
+var dir = new BinarySearchTree();
 
 //for submit on enter
 document.getElementById("term").addEventListener("keypress", submitOnEnter);
@@ -14,7 +16,6 @@ function start(){
 function submitOnEnter(event){
     if(event.which === 13 && !event.shiftKey){
         event.target.form.dispatchEvent(new Event("submit", {cancelable: true}));
-        // event.preventDefault(); prevents next line being created
         checkCom();
     }
 }
@@ -29,15 +30,23 @@ function checkCom(){
   if(contains(comList, command)) runCom(command);
   else printError(command);
 
+  updateCurPath();
+
 }
 
 function runCom(command){
     console.log("running " + command + " :) ");
+    console.log("var text " + text);
+
 }
 
 function printError(command){
   console.log("ERROR " + command + " NOT FOUND");
   newLine();
+}
+
+function updateCurPath(){
+
 }
 
 function newLine(){
@@ -51,30 +60,6 @@ function contains(array, command){
       return true;
   return false;
 }
-
-
-class Tree{
-
-  constructor(){
-
-  }
-
-  Node(){
-    this.data = data;
-    this.parent = null;
-    this.children = [];
-  }
-
-  Tree(data){
-    var node = new Node(data);
-    this._root = node;
-  }
-
-}
-
-
-
-
 
 
 
