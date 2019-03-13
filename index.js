@@ -4,7 +4,7 @@ var text = ""
 var dir = new BinarySearchTree();
 
 //Command class (com.js)
-var com = new Com();
+var com = new Com(dir);
 
 //for submit on enter
 document.getElementById("term").addEventListener("keypress", submitOnEnter);
@@ -23,8 +23,12 @@ function submitOnEnter(event){
     if(event.which === 13 && !event.shiftKey){
         event.target.form.dispatchEvent(new Event("submit", {cancelable: true}));
         event.preventDefault();
-        com.checkCom();
 
+        var command = com.getCom();
+        if(com.contains(command))
+          com.runCom(command);
+        else
+          com.printErr(command);
     }
 }
 
@@ -37,3 +41,7 @@ function updateCurPath(){
 function newLine(){
   updateCurPath();
 }
+
+
+
+

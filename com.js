@@ -1,31 +1,61 @@
 //global command list
 var comList = ["cd", "dir"];
+var dir;
 
 class Com{
 
-  constructor(){
-
+  constructor(BST){
+    dir = BST;
   }
 
-  //edit text area after submit
-  checkCom(){
+  getCom(){
     var command = document.getElementById("term").value;
-    command = command.substring(3, command.indexOf(" "));
+    command = command.substring(3);
 
+    //parsing out space if the user types "cd" no space after
+    if(command.includes(" "))
+      command = command.substring(0, command.indexOf(" "));
+
+    return command;
   }
 
-  contains(array, command){
+  //returns boolean
+  contains(command){
+
     for(var i = 0; i < comList.length; i++)
       if(comList[i] == command.toLowerCase())
         return true;
+
     return false;
   }
 
-  runCom(command){
-      console.log("running " + command + " :) ");
+  runCom(com){
+    console.log("running " + com + " :) ");
+    com = com.toLowerCase();
+    if(com == comList[0])
+      runCD();
+    else if(com == comList[1])
+      runDIR();
+    else
+      console.log("runCom Error ")
+
   }
 
-  printError(command){
-    console.log("ERROR " + command + " NOT FOUND");
+  printErr(command){
+    var errMsg = "ERROR " + command + " NOT FOUND";
+    document.getElementById("term").value += "\n" + errMsg;
   }
+
 }
+
+function runCD(){
+  dir.insert("Big fat test");
+  var root = dir.getRootNode();
+  document.getElementById("term").innerHTML += dir.inorderSTR(root);
+}
+
+function runDIR(){
+  
+}
+
+
