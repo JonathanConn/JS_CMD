@@ -49,13 +49,14 @@ class Com{
 }
 
 function runCD(){
-  dir.insert("Big fat test");
-  var root = dir.getRootNode();
-  document.getElementById("term").innerHTML += dir.inorderSTR(root);
+
 }
 
 function runDIR(){
-  
+  var root = dir.getRootNode();
+
+  var string = dir.inorderSTR(root) + "\n";
+
+  console.log(string);
+  document.getElementById("term").value += string;
 }
-
-

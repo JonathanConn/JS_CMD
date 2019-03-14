@@ -1,3 +1,5 @@
+var temp = "";
+
 class Node{
     constructor(data){
         this.data = data;
@@ -7,6 +9,7 @@ class Node{
 }
 
 class BinarySearchTree{
+
     constructor(){
         // root of a binary seach tree
         this.root = null;
@@ -114,13 +117,13 @@ class BinarySearchTree{
       }
 
       inorderSTR(node){
-        var str = "";
-          if(node !== null){
-              this.inorder(node.left);
-              str += node.data;
-              this.inorder(node.right);
+          if(node != null){
+              this.inorderSTR(node.left);
+              temp += node.data;
+              this.inorderSTR(node.right);
           }
-        return str;
+        return temp;
+        temp = "";
       }
 
 }

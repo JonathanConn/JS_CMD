@@ -13,9 +13,15 @@ document.getElementById("term").addEventListener("keypress", submitOnEnter);
 //text area setup onwindow load, called from body
 function start(){
   dir.insert("C:\\");
+
   var root = dir.getRootNode();
   document.getElementById("term").innerHTML += dir.inorderSTR(root);
 
+  //add initial subdirectors
+  dir.insert("School");
+  dir.insert("Projects");
+
+  console.log(dir.inorderSTR(root));
 }
 
 //when enter key pressed in text area it submits the form
@@ -41,7 +47,3 @@ function updateCurPath(){
 function newLine(){
   updateCurPath();
 }
-
-
-
-
