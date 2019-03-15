@@ -123,7 +123,6 @@ class BinarySearchTree{
               this.inorderSTR(node.right);
           }
         return temp;
-        temp = "";
       }
 
 }
