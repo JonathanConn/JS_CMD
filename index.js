@@ -15,13 +15,18 @@ function start(){
   dir.insert("C:\\");
 
   var root = dir.getRootNode();
+  console.log("first inorder-------------")
   document.getElementById("term").innerHTML += dir.inorderSTR(root);
+  console.log("first inorder-------------")
+//  document.getElementById("term").innerHTML +=
 
   //add initial subdirectors
   dir.insert("School");
   dir.insert("Projects");
 
-  console.log(dir.inorderSTR(root));
+  console.log("2 inorder-------------")
+  dir.inorderSTR(root);
+  console.log("2 inorder-------------")
 }
 
 //when enter key pressed in text area it submits the form

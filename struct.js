@@ -1,5 +1,3 @@
-var temp = "";
-
 class Node{
     constructor(data){
         this.data = data;
@@ -83,6 +81,14 @@ class BinarySearchTree{
           }
       }
 
+      preorder(node){
+        if(node != null){
+          console.log(node.data);
+          this.preorder(node.left);
+          this.preorder(node.right);
+        }
+      }
+
       postorder(node){
         if(node != null){
           this.postorder(node.left);
@@ -117,11 +123,10 @@ class BinarySearchTree{
       }
 
       inorderSTR(node){
-          if(node != null){
-              this.inorderSTR(node.left);
-              temp += node.data;
-              this.inorderSTR(node.right);
-          }
+        var temp = "";
+
+        
+
         return temp;
       }
 
