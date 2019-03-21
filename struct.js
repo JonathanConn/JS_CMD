@@ -122,12 +122,17 @@ class BinarySearchTree{
             return node;
       }
 
-      inorderSTR(node){
-        var temp = "";
+      inorderSTR(node, str){
+        if(node.left !== null){
+          str = this.inorderSTR(node.left, str);
+        }
 
-        
+        str += node.data;
 
-        return temp;
+        if(node.right !== null){
+          str = this.inorderSTR(node.right, str);
+        }
+        return str;
       }
 
 }
