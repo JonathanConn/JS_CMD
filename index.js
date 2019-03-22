@@ -1,6 +1,7 @@
 //global command list
 var commandList = ["cd", "dir"];
-var curPath = "";
+
+var curPath;
 //BST Class (struct.js)
 var dir = new BinarySearchTree();
 
@@ -13,9 +14,8 @@ function start() {
   dir.insert("C:\\");
   var root = dir.getRootNode();
 
-  setCurPath(dir.inorderSTR(root,""));
-  console.log(curPath);
-  updateCurPath();
+  setCurPath(root);
+  updateCurPath(root);
 
   //add initial subdirectors
   dir.insert("School\\");
@@ -39,12 +39,12 @@ function submitOnEnter(event) {
   }
 }
 
-function setCurPath(str){
-  curPath = str;
+function setCurPath(node){
+  curPath = node;
 }
 
-function updateCurPath() {
-  document.getElementById("term").value += curPath;
+function updateCurPath(node) {
+  document.getElementById("term").value += node.data;
 }
 
 function newLine(){
@@ -112,7 +112,7 @@ function runDIR() {
     document.getElementById("term").value += "\t" + str;
   });
   newLine();
-  updateCurPath();
+  updateCurPath(curPath);
 
 
 }
