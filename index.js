@@ -91,6 +91,14 @@ function printErr(command) {
 //command functions ----------------------------
 
 function runCD() {
+    var command = document.getElementById("term").value;
+    var newDir = command.substring((curPath.data+"cd ").length);
+
+    if(dir.search(curPath, newDir)){
+      console.log("dir found");
+    }else{
+      console.log("dir not found");
+    }
 
 }
 
